@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Welcome, {{ user['name'] }} {{ user['surname'] }}</h2>
+        <p>Balance: ${{ user['balance'] }}</p>
+        <form action="{{ url_for('dashboard', phone=user['phone']) }}" method="POST">
+            <input type="number" name="amount" placeholder="Amount" required>
+            <button type="submit" name="action" value="deposit">Deposit</button>
+            <button type="submit" name="action" value="withdraw">Withdraw</button>
+        </form>
+        <h3>Transaction History</h3>
+        <ul>
+            {% for transaction in user['transactions'] %}
+                <li>{{ transaction }}</li>
+            {% endfor %}
+        </ul>
+        <a href="{{ url_for('home') }}">Logout</a>
+    </div>
+</body>
+</html>

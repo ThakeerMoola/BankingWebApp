@@ -1,0 +1,48 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, rgba(200, 200, 200, 0.8), rgba(100, 100, 100, 0.6));
+
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+    margin: 180px auto;
+    padding: 50px;
+    background: linear-gradient(130deg, rgba(0, 201, 255, 0.8), rgba(146, 254, 157, 0.6));
+
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2, h3 {
+    color: #2E4053;
+    text-align: center;
+}
+
+input, button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    background-color: #2E4053;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #1ABC9C;
+}
+
+a {
+    color: #2E4053;
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+}
