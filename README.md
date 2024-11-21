@@ -31,14 +31,17 @@
 
 ### **1. Dashboard**  
 The dashboard provides an overview of the user's account balance and quick access to banking operations.  
+
 ![image](https://github.com/user-attachments/assets/5ef7e542-170f-4dde-be0f-8781b41aa75a)
 
 ### **2. Login Page**  
 A clean and simple login page for secure access to your account.  
+
 ![image](https://github.com/user-attachments/assets/257db65f-cd3a-4331-9c75-2bd247c5b21d)
 
 ### **3. Transaction History**  
 All transactions are displayed in an elegant table for better visibility and tracking.  
+
 ![image](https://github.com/user-attachments/assets/960d50b2-8184-43a5-ae9d-59ebec90ee9a)
 
 ---
