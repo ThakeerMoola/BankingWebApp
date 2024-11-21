@@ -1,11 +1,12 @@
 /* Global Body Styling */
 body {
-    font-family: Arial, sans-serif;
-    background-image: url('{{ url_for("static", filename="images/background.jpg") }}');
-    background-size: cover; /* Ensure the background image covers the entire page */
-    background-position: center center; /* Position the image in the center */
+   font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #56c596, #2E4053); /* Linear gradient from light green to dark blue */
+    background-size: cover; /* Ensures the gradient covers the entire screen */
+    background-attachment: fixed; /* Keeps the background fixed during scrolling */
     margin: 0;
     padding: 0;
+    height: 100vh; /* Ensures the background covers the entire viewport height */
 }
 
 /* Header Styles */
