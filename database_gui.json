@@ -39,7 +39,7 @@
         "id_number": "0109205262081",
         "password": "1786",
         "account_number": "4230254524",
-        "balance": 155604.0,
+        "balance": 206411.0,
         "transactions": [
             "Withdrew R500.00",
             "Deposited R500.00",
@@ -47,7 +47,12 @@
             "Deposited R200.00",
             "Deposited R789.00",
             "Deposited R6.00",
-            "Deposited R9.00"
+            "Deposited R9.00",
+            "Deposited R4.00",
+            "Deposited R3.00",
+            "Deposited R300.00",
+            "Deposited R50000.00",
+            "Deposited R500.00"
         ]
     },
     "0101545150": {

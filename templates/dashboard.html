@@ -7,34 +7,82 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
+
     <!-- Header Section -->
     <header class="header">
         <div class="logo">
             <h2>MoolaVest Bank</h2>
+        </div>
+        <div class="nav-links">
+            <!-- Navigation Links (if any) -->
         </div>
     </header>
 
     <div class="container">
         <h2>Welcome, {{ user['name'] }} {{ user['surname'] }}</h2>
         <p>Balance: R{{ user['balance'] }}</p>
-        <form action="{{ url_for('dashboard', phone=user['phone']) }}" method="POST">
-            <input type="number" name="amount" placeholder="Amount" required>
-            <button type="submit" name="action" value="deposit">Deposit</button>
-            <button type="submit" name="action" value="withdraw">Withdraw</button>
-        </form>
 
-        <!-- Transfer Funds Button -->
-        <a href="{{ url_for('transfer_funds', phone=user['phone']) }}">
-            <button>Transfer Funds</button>
-        </a>
+        <!-- Dashboard Action Buttons -->
+        <div class="dashboard-buttons">
+            <form action="{{ url_for('dashboard', phone=user['phone']) }}" method="POST">
+                <input type="number" name="amount" placeholder="Amount" required>
+                <button type="submit" name="action" value="deposit">Deposit</button>
+                <button type="submit" name="action" value="withdraw">Withdraw</button>
+            </form>
 
+            <!-- Transfer Funds Button -->
+            <a href="{{ url_for('transfer_funds', phone=user['phone']) }}">
+                <button>Transfer Funds</button>
+            </a>
+        </div>
+
+        <!-- Transaction History Section -->
         <h3>Transaction History</h3>
-        <ul>
-            {% for transaction in user['transactions'] %}
-                <li>{{ transaction }}</li>
-            {% endfor %}
-        </ul>
+        <button id="toggle-history-btn">Show Transaction History</button>
+
+        <!-- Hidden Transaction Table (Initially hidden, shown when button clicked) -->
+        <div id="transaction-history" style="display: none;">
+            <table class="transaction-table">
+                <thead>
+                    <tr>
+                        <th>Transaction Type</th>
+                        <th>Amount (ZAR)</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    {% if user['transactions'] %}
+                        {% for transaction in user['transactions'] %}
+                            <tr>
+                                <td>{{ transaction.split(" ")[0] }}</td> <!-- Transaction Type -->
+                                <td>{{ transaction.split(" ")[1] | replace('$', '') }}</td> <!-- Amount -->
+                                <td>{{ transaction.split(" ")[2:] | join(" ") }}</td> <!-- Date -->
+                            </tr>
+                        {% endfor %}
+                    {% else %}
+                        <tr>
+                            <td colspan="3">No transactions yet</td>
+                        </tr>
+                    {% endif %}
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Logout Link -->
         <a href="{{ url_for('home') }}">Logout</a>
     </div>
+
+    <script>
+        // Toggle transaction history visibility
+        document.getElementById('toggle-history-btn').addEventListener('click', function() {
+            var historyTable = document.getElementById('transaction-history');
+            if (historyTable.style.display === "none") {
+                historyTable.style.display = "block";
+            } else {
+                historyTable.style.display = "none";
+            }
+        });
+    </script>
+
 </body>
 </html>
