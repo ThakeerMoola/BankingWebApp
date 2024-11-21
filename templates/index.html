@@ -4,15 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MoolaVest Bank</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
-
 </head>
 <body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="logo">
+            <h2>MoolaVest Bank</h2>
+        </div>
+
+    </header>
+
+    <!-- Main Content -->
     <div class="container">
         <h1>Welcome to MoolaVest Bank</h1>
-        <a href="{{ url_for('create_account') }}">Create Account</a>
-        <a href="{{ url_for('login') }}">Login</a>
+        <a href="{{ url_for('create_account') }}" class="btn">Create Account</a>
+        <a href="{{ url_for('login') }}" class="btn">Login</a>
     </div>
 </body>
 </html>

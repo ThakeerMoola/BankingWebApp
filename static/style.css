@@ -46,3 +46,68 @@ a {
     text-align: center;
     margin-top: 20px;
 }
+
+/* Header Styles */
+.header {
+    background-color: #004aad; /* Dark blue header */
+    color: #fff; /* White text for header */
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky; /* Sticks to top of page */
+    top: 0;
+    z-index: 1000;
+}
+
+/* Logo */
+.header .logo h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+/* Navigation Links */
+.nav-links {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Subtle hover effect */
+}
+
+/* Main Container */
+.container {
+    text-align: center;
+    margin-top: 100px;
+}
+
+.container h1 {
+    font-size: 36px;
+    color: #004aad;
+}
+
+.container a.btn {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 24px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #004aad; /* Blue buttons */
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.container a.btn:hover {
+    background-color: #003580; /* Darker blue on hover */
+}
