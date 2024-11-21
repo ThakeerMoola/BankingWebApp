@@ -1,1 +1,63 @@
-{"0793087415": {"name": "farook", "surname": "Moola", "phone": "0793087415", "id_number": "6808285137084", "password": "123", "account_number": "1008045785", "balance": 199922400.0, "transactions": ["Deposited $3000.00", "Deposited $200.00", "Withdrew $900.00", "Withdrew $200.00", "Withdrew $200.00", "Deposited $500.00", "Deposited $200000000.00", "Withdrew $80000.00"]}, "0153": {"name": "Terric", "surname": "moola", "phone": "0153", "id_number": "2006", "password": "5536", "account_number": "8430041072", "balance": 0.0, "transactions": ["Deposited $5000.00", "Withdrew $2500.00", "Withdrew $2500.00"]}}
+{
+    "0793087415": {
+        "name": "farook",
+        "surname": "Moola",
+        "phone": "0793087415",
+        "id_number": "6808285137084",
+        "password": "123",
+        "account_number": "1008045785",
+        "balance": 199922400.0,
+        "transactions": [
+            "Deposited $3000.00",
+            "Deposited $200.00",
+            "Withdrew $900.00",
+            "Withdrew $200.00",
+            "Withdrew $200.00",
+            "Deposited $500.00",
+            "Deposited $200000000.00",
+            "Withdrew $80000.00"
+        ]
+    },
+    "0153": {
+        "name": "Terric",
+        "surname": "moola",
+        "phone": "0153",
+        "id_number": "2006",
+        "password": "5536",
+        "account_number": "8430041072",
+        "balance": 0.0,
+        "transactions": [
+            "Deposited $5000.00",
+            "Withdrew $2500.00",
+            "Withdrew $2500.00"
+        ]
+    },
+    "0614128506": {
+        "name": "thakeer",
+        "surname": "moola",
+        "phone": "0614128506",
+        "id_number": "0109205262081",
+        "password": "1786",
+        "account_number": "4230254524",
+        "balance": 155604.0,
+        "transactions": [
+            "Withdrew R500.00",
+            "Deposited R500.00",
+            "Deposited R150000.00",
+            "Deposited R200.00",
+            "Deposited R789.00",
+            "Deposited R6.00",
+            "Deposited R9.00"
+        ]
+    },
+    "0101545150": {
+        "name": "zaid",
+        "surname": "theunissen",
+        "phone": "0101545150",
+        "id_number": "05154610610",
+        "password": "123",
+        "account_number": "3309168620",
+        "balance": 0.0,
+        "transactions": []
+    }
+}

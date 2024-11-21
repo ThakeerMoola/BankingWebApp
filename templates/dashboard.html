@@ -12,17 +12,22 @@
         <div class="logo">
             <h2>MoolaVest Bank</h2>
         </div>
-
     </header>
 
     <div class="container">
         <h2>Welcome, {{ user['name'] }} {{ user['surname'] }}</h2>
-        <p>Balance: ${{ user['balance'] }}</p>
+        <p>Balance: R{{ user['balance'] }}</p>
         <form action="{{ url_for('dashboard', phone=user['phone']) }}" method="POST">
             <input type="number" name="amount" placeholder="Amount" required>
             <button type="submit" name="action" value="deposit">Deposit</button>
             <button type="submit" name="action" value="withdraw">Withdraw</button>
         </form>
+
+        <!-- Transfer Funds Button -->
+        <a href="{{ url_for('transfer_funds', phone=user['phone']) }}">
+            <button>Transfer Funds</button>
+        </a>
+
         <h3>Transaction History</h3>
         <ul>
             {% for transaction in user['transactions'] %}
