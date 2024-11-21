@@ -6,6 +6,9 @@
 
 **MoolaVest Bank** is a sleek and modern web-based banking application built using Flask. It offers core banking functionalities like creating accounts, managing balances, viewing transaction history, and transferring funds, all wrapped in a user-friendly and visually appealing design.  
 
+![image](https://github.com/user-attachments/assets/4f1e02c9-46ad-4a7e-bed7-9074609a77a9)
+
+
 ---
 
 ## 🚀 Features  
