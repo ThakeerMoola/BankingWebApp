@@ -7,17 +7,25 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-
-
-
     <div class="container">
         <h2>Welcome, {{ user['name'] }} {{ user['surname'] }}</h2>
-        <p>Balance: R{{ user['balance'] }}</p>
+        <p>Balance: R<span id="user-balance">{{ user['balance'] }}</span></p>
+
+        <!-- Flash Messages -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul class="flash-messages">
+                    {% for category, message in messages %}
+                        <li class="{{ category }}">{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
 
         <!-- Dashboard Action Buttons -->
         <div class="dashboard-buttons">
-            <form action="{{ url_for('dashboard', phone=user['phone']) }}" method="POST">
-                <input type="number" name="amount" placeholder="Amount" required>
+            <form id="transaction-form" action="{{ url_for('dashboard', phone=user['phone']) }}" method="POST">
+                <input id="transaction-amount" type="number" name="amount" placeholder="Enter Amount" required>
                 <button type="submit" name="action" value="deposit">Deposit</button>
                 <button type="submit" name="action" value="withdraw">Withdraw</button>
             </form>
@@ -39,7 +47,6 @@
                     <tr>
                         <th>Transaction Type</th>
                         <th>Amount (ZAR)</th>
-
                     </tr>
                 </thead>
                 <tbody>
@@ -48,7 +55,6 @@
                             <tr>
                                 <td>{{ transaction.split(" ")[0] }}</td> <!-- Transaction Type -->
                                 <td>{{ transaction.split(" ")[1] | replace('$', '') }}</td> <!-- Amount -->
-                                <td>{{ transaction.split(" ")[2:] | join(" ") }}</td> <!-- Date -->
                             </tr>
                         {% endfor %}
                     {% else %}
@@ -70,11 +76,27 @@
             var historyTable = document.getElementById('transaction-history');
             if (historyTable.style.display === "none") {
                 historyTable.style.display = "block";
+                this.textContent = "Hide Transaction History";
             } else {
                 historyTable.style.display = "none";
+                this.textContent = "Show Transaction History";
+            }
+        });
+
+        // Validate Withdrawal
+        document.getElementById('transaction-form').addEventListener('submit', function(event) {
+            const amountInput = document.getElementById('transaction-amount');
+            const action = event.submitter.value; // Get the button clicked (deposit/withdraw)
+            const userBalance = parseFloat(document.getElementById('user-balance').textContent);
+
+            if (action === 'withdraw') {
+                const amount = parseFloat(amountInput.value);
+                if (amount > userBalance) {
+                    event.preventDefault(); // Prevent form submission
+                    alert("Error: Withdrawal amount exceeds your current balance!");
+                }
             }
         });
     </script>
-
 </body>
 </html>

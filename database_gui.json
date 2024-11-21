@@ -6,7 +6,7 @@
         "id_number": "6808285137084",
         "password": "123",
         "account_number": "1008045785",
-        "balance": 199922400.0,
+        "balance": 199922600.0,
         "transactions": [
             "Deposited $3000.00",
             "Deposited $200.00",
@@ -15,7 +15,8 @@
             "Withdrew $200.00",
             "Deposited $500.00",
             "Deposited $200000000.00",
-            "Withdrew $80000.00"
+            "Withdrew $80000.00",
+            "Received R200.00 from account 4230254524"
         ]
     },
     "0153": {
@@ -39,7 +40,7 @@
         "id_number": "0109205262081",
         "password": "1786",
         "account_number": "4230254524",
-        "balance": 206411.0,
+        "balance": 208911.0,
         "transactions": [
             "Withdrew R500.00",
             "Deposited R500.00",
@@ -52,7 +53,13 @@
             "Deposited R3.00",
             "Deposited R300.00",
             "Deposited R50000.00",
-            "Deposited R500.00"
+            "Deposited R500.00",
+            "Deposited R500.00",
+            "Withdrew R700.00",
+            "Deposited R200.00",
+            "Withdrew R300.00",
+            "Transferred R200.00 to account 1008045785",
+            "Deposited R3000.00"
         ]
     },
     "0101545150": {
