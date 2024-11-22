@@ -51,6 +51,10 @@ def create_account():
             flash("All fields are required!", 'error')
             return redirect(url_for('create_account'))
 
+        if not id_number.isdigit() or len(id_number) != 13:
+            flash("ID Number must be exactly 13 digits.", 'error')
+            return redirect(url_for('create_account'))
+
         # Load the existing database
         database = load_database()
 
@@ -83,60 +87,12 @@ def create_account():
 
     return render_template('create_account.html')
 
-@app.route('/transfer_funds/<phone>', methods=['GET', 'POST'])
-def transfer_funds(phone):
-    """Transfer funds from one account to another."""
-    database = load_database()
-
-    if phone not in database:
-        flash("User not found.", 'error')
-        return redirect(url_for('home'))
-
-    user = database[phone]
-
-    if request.method == 'POST':
-        recipient_account_number = request.form['recipient_account_number']
-        amount = float(request.form['amount'])
-
-        # Find recipient by account number
-        recipient = None
-        for account in database.values():
-            if account['account_number'] == recipient_account_number:
-                recipient = account
-                break
-
-        # If recipient doesn't exist
-        if not recipient:
-            flash("Recipient account number not found.", 'error')
-            return redirect(url_for('transfer_funds', phone=phone))
-
-        # If amount is invalid or user has insufficient funds
-        if amount <= 0 or amount > user['balance']:
-            flash("Invalid amount or insufficient funds.", 'error')
-            return redirect(url_for('transfer_funds', phone=phone))
-
-        # Perform the transfer
-        user['balance'] -= amount
-        recipient['balance'] += amount
-
-        # Add transaction details
-        user['transactions'].append(f"Transferred R{amount:.2f} to account {recipient_account_number}")
-        recipient['transactions'].append(f"Received R{amount:.2f} from account {user['account_number']}")
-
-        save_database(database)
-
-        flash(f"R{amount:.2f} transferred successfully to account {recipient_account_number}.", 'success')
-        return redirect(url_for('dashboard', phone=phone))
-
-    return render_template('transfer_funds.html', user=user)
-
-
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     """Login page."""
     if request.method == 'POST':
-        id_number = request.form['id_number']  # Get ID number instead of phone
+        id_number = request.form['id_number']
         password = request.form['password']
 
         # Load the existing database
@@ -145,10 +101,10 @@ def login():
         # Check if the user exists using ID number
         for user in database.values():
             if user['id_number'] == id_number and user['password'] == password:
-                flash("Login successful!", "login_success")
+                flash("Login successful!", "success")
                 return redirect(url_for('dashboard', phone=user['phone']))
 
-        flash("Invalid ID number or password.", "login_error")
+        flash("Invalid ID number or password.", "error")
         return redirect(url_for('login'))
 
     return render_template('login.html')
@@ -191,6 +147,56 @@ def dashboard(phone):
             flash("Please enter a valid amount.", 'error')
 
     return render_template('dashboard.html', user=user)
+
+
+@app.route('/transfer_funds/<phone>', methods=['GET', 'POST'])
+def transfer_funds(phone):
+    """Transfer funds from one account to another."""
+    database = load_database()
+
+    if phone not in database:
+        flash("User not found.", 'error')
+        return redirect(url_for('home'))
+
+    user = database[phone]
+
+    if request.method == 'POST':
+        recipient_account_number = request.form['recipient_account_number']
+        try:
+            amount = float(request.form['amount'])
+        except ValueError:
+            flash("Invalid amount. Please enter a valid number.", 'error')
+            return redirect(url_for('transfer_funds', phone=phone))
+
+        # Find recipient by account number
+        recipient = None
+        for account in database.values():
+            if account['account_number'] == recipient_account_number:
+                recipient = account
+                break
+
+        if not recipient:
+            flash("Recipient account number not found.", 'error')
+            return redirect(url_for('transfer_funds', phone=phone))
+
+        if amount <= 0 or amount > user['balance']:
+            flash("Invalid amount or insufficient funds.", 'error')
+            return redirect(url_for('transfer_funds', phone=phone))
+
+        # Perform the transfer
+        user['balance'] -= amount
+        recipient['balance'] += amount
+
+        # Add transaction details
+        user['transactions'].append(f"Transferred R{amount:.2f} to account {recipient_account_number}")
+        recipient['transactions'].append(f"Received R{amount:.2f} from account {user['account_number']}")
+
+        save_database(database)
+
+        flash(f"R{amount:.2f} transferred successfully to account {recipient_account_number}.", 'success')
+        return redirect(url_for('dashboard', phone=phone))
+
+    return render_template('transfer_funds.html', user=user)
 
 
 @app.route('/transaction_history/<phone>')

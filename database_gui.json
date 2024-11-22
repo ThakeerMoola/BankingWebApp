@@ -1,38 +1,4 @@
 {
-    "0793087415": {
-        "name": "farook",
-        "surname": "Moola",
-        "phone": "0793087415",
-        "id_number": "6808285137084",
-        "password": "123",
-        "account_number": "1008045785",
-        "balance": 199922600.0,
-        "transactions": [
-            "Deposited $3000.00",
-            "Deposited $200.00",
-            "Withdrew $900.00",
-            "Withdrew $200.00",
-            "Withdrew $200.00",
-            "Deposited $500.00",
-            "Deposited $200000000.00",
-            "Withdrew $80000.00",
-            "Received R200.00 from account 4230254524"
-        ]
-    },
-    "0153": {
-        "name": "Terric",
-        "surname": "moola",
-        "phone": "0153",
-        "id_number": "2006",
-        "password": "5536",
-        "account_number": "8430041072",
-        "balance": 0.0,
-        "transactions": [
-            "Deposited $5000.00",
-            "Withdrew $2500.00",
-            "Withdrew $2500.00"
-        ]
-    },
     "0614128506": {
         "name": "thakeer",
         "surname": "moola",
@@ -40,7 +6,7 @@
         "id_number": "0109205262081",
         "password": "1786",
         "account_number": "4230254524",
-        "balance": 208911.0,
+        "balance": 209411.0,
         "transactions": [
             "Withdrew R500.00",
             "Deposited R500.00",
@@ -59,7 +25,8 @@
             "Deposited R200.00",
             "Withdrew R300.00",
             "Transferred R200.00 to account 1008045785",
-            "Deposited R3000.00"
+            "Deposited R3000.00",
+            "Received R500.00 from account 1957126587"
         ]
     },
     "0101545150": {
@@ -71,5 +38,33 @@
         "account_number": "3309168620",
         "balance": 0.0,
         "transactions": []
+    },
+    "00": {
+        "name": "Phaswane",
+        "surname": "Ramokone",
+        "phone": "00",
+        "id_number": "11",
+        "password": "5536",
+        "account_number": "1957126587",
+        "balance": 650.0,
+        "transactions": [
+            "Deposited R1550.00",
+            "Withdrew R700.00",
+            "Transferred R500.00 to account 4230254524",
+            "Received R300.00 from account 5815388207"
+        ]
+    },
+    "0793087415": {
+        "name": "Farouk",
+        "surname": "Moola",
+        "phone": "0793087415",
+        "id_number": "6808285174081",
+        "password": "2468",
+        "account_number": "5815388207",
+        "balance": 49700.0,
+        "transactions": [
+            "Deposited R50000.00",
+            "Transferred R300.00 to account 1957126587"
+        ]
     }
 }

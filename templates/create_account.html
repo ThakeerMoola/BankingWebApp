@@ -7,16 +7,14 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-
-
-
     <div class="container">
         <h2>Create Account</h2>
         <form action="{{ url_for('create_account') }}" method="POST">
             <input type="text" name="name" placeholder="Full Name" required>
             <input type="text" name="surname" placeholder="Surname" required>
             <input type="text" name="phone" placeholder="Phone Number" required>
-            <input type="text" name="id_number" placeholder="ID Number" required>
+            <input type="text" name="id_number" placeholder="ID Number" required
+                   pattern="\d{13}" title="ID Number must be exactly 13 digits" maxlength="13">
             <input type="password" name="password" placeholder="Password" required>
             <button type="submit">Create Account</button>
         </form>
