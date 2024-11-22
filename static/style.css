@@ -178,6 +178,32 @@ form input[type="number"], form button {
     box-sizing: border-box; /* Prevents overflow */
 }
 
+/* Logout Button Styling */
+a.logout-btn {
+    display: inline-block; /* Ensures it's treated like a button */
+    padding: 10px 20px; /* Adds space inside the button */
+    background-color: #FF0000; /* A dark blue color for the button */
+    color: white; /* White text color */
+    text-decoration: none; /* Removes underline */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 16px; /* Font size for readability */
+    text-align: center; /* Center-align text */
+    margin-top: 20px; /* Adds some spacing above the button */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover effects */
+}
+
+a.logout-btn:hover {
+    background-color: #003580; /* Slightly darker blue on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+a.logout-btn:active {
+    background-color: #00264d; /* Darker blue on click */
+    transform: scale(0.98); /* Slightly smaller on click */
+}
+
+
 /* Button Group (Vertical Alignment) */
 .dashboard-buttons {
     display: flex;

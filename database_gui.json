@@ -6,27 +6,10 @@
         "id_number": "0109205262081",
         "password": "1786",
         "account_number": "4230254524",
-        "balance": 209411.0,
+        "balance": 129061.0,
         "transactions": [
-            "Withdrew R500.00",
-            "Deposited R500.00",
-            "Deposited R150000.00",
-            "Deposited R200.00",
-            "Deposited R789.00",
-            "Deposited R6.00",
-            "Deposited R9.00",
-            "Deposited R4.00",
-            "Deposited R3.00",
-            "Deposited R300.00",
-            "Deposited R50000.00",
-            "Deposited R500.00",
-            "Deposited R500.00",
-            "Withdrew R700.00",
-            "Deposited R200.00",
-            "Withdrew R300.00",
-            "Transferred R200.00 to account 1008045785",
-            "Deposited R3000.00",
-            "Received R500.00 from account 1957126587"
+
+            "Transferred R350.00 to account 1957126587"
         ]
     },
     "0101545150": {
@@ -46,12 +29,13 @@
         "id_number": "11",
         "password": "5536",
         "account_number": "1957126587",
-        "balance": 650.0,
+        "balance": 1000.0,
         "transactions": [
             "Deposited R1550.00",
             "Withdrew R700.00",
             "Transferred R500.00 to account 4230254524",
-            "Received R300.00 from account 5815388207"
+            "Received R300.00 from account 5815388207",
+            "Received R350.00 from account 4230254524"
         ]
     },
     "0793087415": {
@@ -66,5 +50,15 @@
             "Deposited R50000.00",
             "Transferred R300.00 to account 1957126587"
         ]
+    },
+    "0217457415": {
+        "name": "test",
+        "surname": "test",
+        "phone": "0217457415",
+        "id_number": "0000000000000",
+        "password": "22",
+        "account_number": "9359360625",
+        "balance": 0.0,
+        "transactions": []
     }
 }
