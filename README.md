@@ -8,6 +8,7 @@
 
 ![image](https://github.com/user-attachments/assets/4f1e02c9-46ad-4a7e-bed7-9074609a77a9)
 
+Deployed link: https://bankingwebapp-ar7j.onrender.com
 
 ---
 
